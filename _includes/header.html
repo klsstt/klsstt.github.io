@@ -1,0 +1,18 @@
+<div class="meny">
+	<div id="tags">
+		<a href="/index.html" id="avatar" style="background-image:url({{ site.avatar }})"></a>
+		<ul id="tags__ul">
+		  <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
+		  {% for category in site.categories %} 
+			<li id="{{ category[0] }}" class="tags__li tags-btn">{{ category[0] }}</li>
+		  {% endfor %}
+		</ul>
+	</div> <!-- end #tags -->
+	<div id="tags__bottom">
+		<a href="mailto:{{ site.author.email }}" id="icon-email" class="tags-btn fontello"></a>
+		<a href="http://weibo.com/p/1005055377828860/home" id="icon-feed" class="tags-btn fontello"></a>
+	</div>
+</div>
+<!--<div class="meny-arrow"></div>-->
+
+
