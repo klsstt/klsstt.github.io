@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+	<div class="contents">
+		
+		<aside id="sidebar">
+			
+			<div id="posts-list">
+				<form action="" id="search-form">
+				  <a href="/index.html" id="mobile-avatar" style="background-image:url({{ site.avatar }})"></a>
+				  <!-- NOTE: input field is disabled by default -->
+				  <input id="search-input" type="text" placeholder="Search..." disabled >
+				</form>
+
+				<nav id="pl__container">
+				{% for post in site.posts %}
+				  <a class="{{ post.categories }} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>
+				{% endfor %}
+				</nav>
+			</div> <!-- end #posts-list -->
+			
+	   </aside> <!-- end #sidebar -->
+	   
+		<div id="post">
+		  <div id="pjax">
+			{{ content }}
+		  </div>
+		</div>
+		<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>	
+	</div>
+	{% include footer.html %}
+	{% include googleanalytics.html %}
+	
+  </body>
+
+</html>
