@@ -1,0 +1,22 @@
+permalink: /:year/:month/:day/:title.html
+#作者信息
+author: 
+  name: 康博磊
+  email: klsstt@qq.com
+  link: http://klsstt.com
+  github: http://github.com/klsstt
+#网站信息
+title: 康博磊的博客小站
+email: klsstt@qq.com
+description: 康博磊的博客小站 
+url: http://klsstt.com 
+#头像及图标
+avatar: http://tp1.sinaimg.cn/5377828860/180/40071065181/1.jpg
+favicon: http://tp1.sinaimg.cn/5377828860/180/40071065181/1.jpg
+#disqus settings
+disqus:
+  shortname: klsstt
+# Build settings
+markdown: kramdown
+
+
