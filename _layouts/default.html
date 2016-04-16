@@ -31,10 +31,13 @@
 			{{ content }}
 		  </div>
 		</div>
+		<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+		{% include share.html %}
 		<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>	
 	</div>
+
 	{% include footer.html %}
-	{% include googleanalytics.html %}
+
 	
   </body>
 
