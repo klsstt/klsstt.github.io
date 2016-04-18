@@ -144,9 +144,9 @@ var duoshuoQuery = {short_name:"klsstt"};
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
 	
-var ishref_value=window.location.href;
+var ishref_value=window.location.href.split("#")[0];
 function ishref(){
-	var url=window.location.href;
+	var url=window.location.href.split("#")[0];
 	if(url!=ishref_value){
 		ishref_value=url;
 		window.location.reload();
