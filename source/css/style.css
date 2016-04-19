@@ -929,7 +929,11 @@ iframe {
 /*! Modified by Peiwen Lu @ 30 Nov 2013 */
 /* Code blocks */
 .highlight {
-  margin: 1.715em 0; }
+  margin: 1.715em 0;  background: #8FD09A;}
+
+.highlighter-rouge .highlight { background: #8FD09A; }
+
+.highlighter-rouge .highlight  code { font-size: 15px; border: 1px solid #8FD09A; border-radius: 3px; background-color: #8FD09A; }
 
 pre {
   padding: 1em;
@@ -976,6 +980,7 @@ pre > code {
   border: 1px solid #e5e8ec;
   border-radius: .25em;
   vertical-align: 2px; }
+
 
 .highlight .c {
   color: #586e75; }
@@ -1251,3 +1256,38 @@ pre > code {
   color: #2aa198; }
 
 /* Literal.Number.Integer.Long */
+/*导航*/
+.BlogAnchor {
+    background: #f4f7f9;
+    padding: 10px;
+    line-height: 180%;
+}
+.BlogAnchor p {
+    font-size: 18px;
+    color: #15a230;
+    margin-bottom: 0.3em;
+}
+.BlogAnchor .AnchorContent {
+    padding: 5px 0px;
+}
+.BlogAnchor li{
+    text-indent: 20px;
+    font-size: 14px;
+}
+#AnchorContentToggle {
+    font-size: 13px;
+    font-weight: normal;
+    color: #FFF;
+    display: inline-block;
+    line-height: 20px;
+    background: #5cc26f;
+    font-style: normal;
+    padding: 1px 8px;
+    margin-right: 10px;
+}
+.BlogAnchor a:hover {
+    color: #5cc26f;
+}
+.BlogAnchor a {
+    text-decoration: none;
+}
