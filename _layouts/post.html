@@ -5,9 +5,9 @@ layout: default
   <h1 id="post__title" data-identifier="{{ page.date | date: "%Y%m%d" }}">{{ page.title }}</h1>
 	<div class="BlogAnchor">
 		<p>
-			<b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录[-]</b>
+			<b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录[+]</b>
 		</p>
-		<div class="AnchorContent" id="AnchorContent"> </div>
+		<div class="AnchorContent" id="AnchorContent" style="display:none;"> </div>
 	</div>
   {{ content }}
 </article> <!-- end #post__content -->
