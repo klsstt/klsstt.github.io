@@ -116,7 +116,7 @@ function afterPjax() {
 
   // Lazy Loading Disqus
   // http://jsfiddle.net/dragoncrew/SHGwe/1/
-  var ds_loaded = false,
+  /*var ds_loaded = false,
       top = null;//$('#disqus_thread').offset().top;
   window.disqus_shortname = $('#disqus_thread').attr('name');
 
@@ -131,7 +131,7 @@ function afterPjax() {
       ds_loaded = true;
     }
   }check();
-  container.scroll(check);
+  container.scroll(check);*/
 }afterPjax();
 window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 var duoshuoQuery = {short_name:"klsstt"};
@@ -143,8 +143,8 @@ var duoshuoQuery = {short_name:"klsstt"};
 		(document.getElementsByTagName('head')[0] 
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-	
 var ishref_value=window.location.href.split("#")[0];
+
 function ishref(){
 	var url=window.location.href.split("#")[0];
 	if(url!=ishref_value){
@@ -154,3 +154,35 @@ function ishref(){
 	
 }
 setInterval("ishref()",1000);//1000为1秒钟
+
+
+//在文章中查找title并填充到div AnchorContent中
+$("#post__content").find("h2,h3,h4,h5,h6").each(function(i,item){
+    var tag = $(item).get(0).localName;
+    $(item).attr("id","wow"+i);
+    $("#AnchorContent").append('<li><a class="new'+tag+' anchor-link" onclick="return false;" href="#" link="#wow'+i+'">'+(i+1)+" · "+$(this).text()+'</a></li>');
+    $(".newh2").css("margin-left",0);
+    $(".newh3").css("margin-left",20);
+    $(".newh4").css("margin-left",40);
+    $(".newh5").css("margin-left",60);
+    $(".newh6").css("margin-left",80);
+});
+$("#AnchorContentToggle").click(function(){
+    var text = $(this).html();
+    if(text=="目录[-]"){
+        $(this).html("目录[+]");
+        $(this).attr({"title":"展开"});
+    }else{
+        $(this).html("目录[-]");
+        $(this).attr({"title":"收起"});
+    }
+    $("#AnchorContent").toggle();
+});
+$(".anchor-link").click(function(){
+	var id=$(this).attr("link");
+	var top=$(id).offset().top;
+    container.animate({scrollTop:top}, 1000);
+	$(id).css('fontWeight','bold');
+	$(id).css('font-size','25px');
+	//window.location.href=ishref_value+$(this).attr("link");
+});
