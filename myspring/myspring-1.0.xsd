@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns= "http://www.klsstt.com/myspring" 
+targetNamespace="http://www.klsstt.com/myspring">
+
+	<xsd:element name="package" type="xsd:string" />
+	
+	<xsd:element name="paramName" type="xsd:string" default="action">
+    	
+        <xsd:annotation>
+			<xsd:documentation><![CDATA[解析参数]]></xsd:documentation>
+		</xsd:annotation>
+    </xsd:element>
+    
+    <xsd:element name="defaultMethodName" type="xsd:string" default="query">
+	    
+        <xsd:annotation>
+			<xsd:documentation><![CDATA[默认方法]]></xsd:documentation>
+		</xsd:annotation>
+    </xsd:element>
+   	
+   	<xsd:element name="value" type="xsd:string">
+	</xsd:element>
+	
+	<xsd:element name="defaultResolver">
+		
+        <xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="paramName" />
+				<xsd:element ref="defaultMethodName" />
+			</xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+	
+	<xsd:element name="property">
+		
+        <xsd:complexType>
+			<xsd:sequence>
+		    	<xsd:element ref="value" />
+		    </xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+	
+	<xsd:element name="bean">
+		
+        <xsd:complexType>
+		<xsd:attribute name="id" type="xsd:string" />
+		<xsd:attribute name="class" type="xsd:string" use="optional" />
+		</xsd:complexType>
+    </xsd:element>
+	
+	<xsd:element name="sqlmap">
+		
+        <xsd:complexType>
+			<xsd:sequence> 
+				<xsd:element ref="package" />
+			</xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+	
+	<xsd:element name="scan">
+		
+        <xsd:complexType>
+			<xsd:sequence> 
+				<xsd:element ref="package" />
+			</xsd:sequence>
+		</xsd:complexType>
+    </xsd:element>
+	
+	<xsd:element name="klsstt"></xsd:element>
+
+</xsd:schema>
