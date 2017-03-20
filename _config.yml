@@ -11,8 +11,8 @@ email: klsstt@qq.com
 description: 康博磊的博客小站 
 url: http://klsstt.com 
 #头像及图标
-avatar: http://tp1.sinaimg.cn/5377828860/180/40071065181/1.jpg
-favicon: http://tp1.sinaimg.cn/5377828860/180/40071065181/1.jpg
+avatar: https://avatars3.githubusercontent.com/u/12181250?v=3&s=460
+favicon: https://avatars3.githubusercontent.com/u/12181250?v=3&s=460
 #disqus settings
 disqus:
   shortname: klsstt
