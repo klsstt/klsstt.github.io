@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>        
+    <title>Taurus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+    textarea {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    border: 1px solid #CCC;
+    /* border-radius: 8px; */
+    padding: 4px;
+    box-shadow: 2px 2px 5px #d3d6da;
+    -moz-box-shadow: 2px 2px 5px #d3d6da;
+}
+    </style>
+</head>
+<body>
+        <h3 class="explainer">中文汉字 | ASCII | Unicode互相转换工具</h3>
+        <ul class="new_tools_list">
+	        	<li>提供一个中文汉字Unicode互转、 ASCII与Unicode互转的在线工具，方便帮助你解决中文的乱码问题。</li>
+	        	
+			</ul>
+    <textarea id="input_area" name="input_area" placeholder="贴入要处理的Unicode或Ascii字符" value="">www.klsstt.com Unicode互相转换工具</textarea>
+    <div class="row">
+        <button class="button primary small" onclick="javascript:a(&#39;CONVERT_FMT2&#39;);">中文汉字转Unicode</button>
+        <button class="button primary small" onclick="javascript:a(&#39;RECONVERT&#39;);">Unicode转中文汉字</button>		
+        <button class="button primary small" onclick="javascript:a(&#39;RECONVERT&#39;)">ASCII转换Unicode</button>
+        <button class="button primary small" onclick="javascript:a(&#39;CONVERT_FMT3&#39;);">Unicode转换ASCII</button>
+        <button class="button primary small" onclick="javascript:a(&#39;CONVERT_FMT1&#39;);">中文转换&amp;#XXXX</button>
+        
+    </div>
+    <textarea name="output_area" id="output_area" onclick="this.select();" placeholder="处理之后的Unicode或Ascii字符" value=""></textarea>
+    <div class="divider"></div>
+    <h4 class="explainer">Unicode介绍 | Unicode Introduce</h4>
+    <ul class="new_tools_list">
+            <li>Unicode（统一码、万国码、单一码）是一种在计算机上使用的字符编码。</li>
+            <li>Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。</li>
+            <li>Unicode是国际组织制定的可以容纳世界上所有文字和符号的字符编码方案。Unicode用数字0-0x10FFFF来映射这些字符，最多可以容纳1114112个字符，或者说有1114112个码位。码位就是可以分配给字符的数字。</li>
+            <li>Unicode 到目前为止所定义的五个平面中，第0平面(BMP)最为重要，其编码中文汉字范围为：4E00-9FBFCJK 统一表意符号 (CJK Unified Ideographs)</li>
+        </ul>
+        <h4 class="explainer">ASCII介绍 | ASCII Introduce</h4>
+        <ul class="new_tools_list">
+				<li>ASCII是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语和其他西欧语言。</li>
+				<li>它是现今最通用的单字节编码系统，并等同于国际标准ISO/IEC 646。</li>
+				<li>0-127 是7位ASCII 码的范围，是国际标准。至于汉字，不同的字符集用的ascii 码的范围也不一样，常用的汉字字符集有GB2312-80,GBK,Big5,unicode 等。</li>
+				<li>GB_2312 字符集是目前最常用的汉字编码标准。在这个标准中，每个汉字用2个字节来表示，每个字节的ascii码为 161-254 (16 进制A1 - FE)，第一个字节 对应于 区码的1-94 区，第二个字节 对应于位码的1-94 位。</li>
+			</ul>
+</body>
+<script type="text/javascript">
+    function a(pChoice){
+        var inputEle = document.getElementById('input_area');
+        var outputEle = document.getElementById('output_area');
+        switch(pChoice){ 
+            case "CONVERT_FMT1":
+                outputEle.value = ascii(inputEle.value);
+                break; 
+            case "CONVERT_FMT2":
+                outputEle.value = unicode(inputEle.value);
+                break; 
+            case "CONVERT_FMT3":
+                outputEle.value = unicode1(inputEle.value);
+                break; 
+            case "RECONVERT":
+                outputEle.value = reconvert(inputEle.value);
+                break; 
+        } 
+    } 
+    function ascii(str){ 
+        var value='';
+        for (var i = 0; i < str.length; i++) {
+            value += '\&#x' + left_zero_4(parseInt(str.charCodeAt(i)).toString(16))+';';
+        }
+        return value;
+    } 
+    function unicode(str){
+        var value='';
+        for (var i = 0; i < str.length; i++) {
+            value += '\\u' + left_zero_4(parseInt(str.charCodeAt(i)).toString(16));
+        }
+        return value;
+    }
+    function left_zero_4(str) {
+        if (str != null && str != '' && str != 'undefined') {
+            if (str.length == 2) {
+                return '00' + str;
+            }
+        }
+        return str;
+    }
+    function unicode1(str){ 
+        var value='';
+        for (var i = 0; i < str.length; i++)
+            value += '&#' + str.charCodeAt(i) + ';';
+        return value;
+    } 
+    function reconvert(str){ 
+        str = str.replace(/(\\u)(\w{1,4})/gi,function($0){ 
+            return (String.fromCharCode(parseInt((escape($0).replace(/(%5Cu)(\w{1,4})/g,"$2")),16))); 
+        }); 
+        str = str.replace(/(&#x)(\w{1,4});/gi,function($0){ 
+            return String.fromCharCode(parseInt(escape($0).replace(/(%26%23x)(\w{1,4})(%3B)/g,"$2"),16)); 
+        }); 
+        str = str.replace(/(&#)(\d{1,6});/gi,function($0){ 
+            return String.fromCharCode(parseInt(escape($0).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2"))); 
+        }); 
+        
+        return str; 
+    }
+
+
+	        
+    </script>
+</html>
