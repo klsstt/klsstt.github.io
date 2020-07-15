@@ -15,13 +15,13 @@ return sValue?sValue[1]:sValue}var dusername="康博磊";var lusername=QueryStri
 	if (obj.length>30) {alert('太长');return false;}
 	if (obj.length==0) {alert('还没填姓名呀!');return false;}
 	obj=escape(obj).replaceAll("%","!");
-	var url="http://www.klsstt.com/blessing/?from="+obj;
-	copy("2017新年快乐，新年的第一份祝福送给您！我祝您福气满满，快乐连连，万事圆圆，微笑甜甜！\n"+url);
+	var url="http://klsstt.github.io/blessing/?from="+obj;
+	copy("2021新年快乐，新年的第一份祝福送给您！我祝您福气满满，快乐连连，万事圆圆，微笑甜甜！\n"+url);
 	window.location.replace(url);return false}
 function copy(meintext) {
   if (window.clipboardData) {window.clipboardData.setData("Text", meintext);alert('网址已生成并替您复制好了，直接粘贴到QQ、MSN、邮箱就可以了\n\n 您的朋友一定会很惊喜，快快发送吧！');}else{alert('对不起，您的浏览器不支持此复制功能，请从地址栏里手动复制。');}}
 mname=escape(lusername).replaceAll("%","!");
-murl = "http://www.klsstt.com/blessing/?from="+mname;
+murl = "http://klsstt.github.io/blessing/?from="+mname;
 </script>
 </head>
 <body>
@@ -94,7 +94,7 @@ document.write("祝福永远不晚！记得给您的朋友们送去祝福喔！ 
  </form> 
  </div><div class="clear"></div>
  <div class="copyright">
- CopyRight &copy; 2017 Theme by <a href="http://www.klsstt.com" target="_blank">www.klsstt.com</a>   
+ CopyRight &copy; 2017 Theme by <a href="http://klsstt.github.io/" target="_blank">http://klsstt.github.io/</a>   
  </div>
 </div>
 </body>
