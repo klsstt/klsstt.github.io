@@ -3,13 +3,13 @@ permalink: /:year/:month/:day/:title.html
 author: 
   name: 康博磊
   email: klsstt@qq.com
-  link: http://klsstt.com
+  link: https://blog.csdn.net/klsstt
   github: http://github.com/klsstt
 #网站信息
 title: 康博磊的博客小站
 email: klsstt@qq.com
 description: 康博磊的博客小站 
-url: http://klsstt.com 
+url: https://blog.csdn.net/klsstt 
 #头像及图标
 avatar: https://avatars3.githubusercontent.com/u/12181250?v=3&s=460
 favicon: https://avatars3.githubusercontent.com/u/12181250?v=3&s=460

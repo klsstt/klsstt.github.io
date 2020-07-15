@@ -1,5 +1,5 @@
 {
-  "name": "www.klsstt.com",
+  "name": "https://blog.csdn.net/klsstt",
   "tagline": "康博磊的博客小站",
   "body": "<section class=\"main-content\">\r\n      <h3>\r\n<a id=\"welcome-to-github-pages\" class=\"anchor\" href=\"#welcome-to-github-pages\" aria-hidden=\"true\"><span aria-hidden=\"true\" class=\"octicon octicon-link\"></span></a>Welcome to klsstt.</h3>\r\n\r\n<p>这是一个正在创建的静态博客小站，通过对jekyll学习，该博客的功能将越来越完善。</p>\r\n\r\n\t关注我的<a id=\"welcome-to-github-pages\" class=\"anchor\"   href=\"http://weibo.com/p/1005055377828860/home?from=page_100505&mod=TAB#place\">新浪微博</a>和<a href=\"http://blog.csdn.net/klsstt\">CSDN</a>，和我一起玩jekyll吧！\r\n\r\n    </section>",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
