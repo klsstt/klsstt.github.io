@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[https://blog.csdn.net/klsstt](https://blog.csdn.net/klsstt)
+地址：[https://http://klsstt.github.io/](https://http://klsstt.github.io/)
 
 ### 安装说明
 
